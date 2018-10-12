@@ -1,6 +1,4 @@
-
-
-@cables.each do |cable| 
+json.array! @cables.each do |cable| 
   json.name cable.name
   json.price cable.price
   json.length cable.length

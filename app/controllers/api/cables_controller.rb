@@ -8,4 +8,9 @@ class Api::CablesController < ApplicationController
 
   end 
 
+  # def display_first
+  #   @cables = Cable.first
+  #   render "view_single.json.jbuilder"
+  # end 
+
 end
