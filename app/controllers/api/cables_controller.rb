@@ -8,9 +8,10 @@ class Api::CablesController < ApplicationController
 
   end 
 
-  # def display_first
-  #   @cables = Cable.first
-  #   render "view_single.json.jbuilder"
-  # end 
+  def one_product
+    input_id = params["id"]
+    @cables = Cable.find_by(id: input_id)
+    render "one_product.json.jbuilder"
+  end 
 
 end
