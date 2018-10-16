@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :api do
-    get "/all" => "cables#display_all"
-    get "/one_product" => "cables#one_product"
-    get "/one_product/:id" => "cables#one_product"
+    get "/cables" => "cables#index" #show all cables
+    get "/cables/:id" => "cables#show" #show cable based on URL segment variable
+    post "/cables" => "cables#create" #adds cable to database
   end 
   
 end
