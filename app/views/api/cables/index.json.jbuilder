@@ -1,4 +1,5 @@
 json.array! @cables.each do |cable| 
+  json.id cable.id
   json.name cable.name
   json.price cable.price
   json.length cable.length
