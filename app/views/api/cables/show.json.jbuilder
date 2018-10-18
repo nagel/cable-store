@@ -1,10 +1,1 @@
-  json.id @cables.id
-  json.name @cables.name
-  json.price @cables.price
-  json.length @cables.length
-  json.function @cables.function
-  json.model_year @cables.model_year
-  json.description @cables.description
-  json.discount @cables.is_discounted?
-  json.tax @cables.tax
-  json.total @cables.total
+json.partial! "cable.json.jbuilder", cable: @cable
