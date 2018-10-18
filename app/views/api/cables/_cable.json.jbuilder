@@ -5,6 +5,7 @@
   json.function cable.function
   json.model_year cable.model_year
   json.description cable.description
+  json.in_stock? cable.in_stock
   json.discount cable.is_discounted?
   json.tax cable.tax
   json.total cable.total
