@@ -6,6 +6,9 @@ json.array! @cables.each do |cable|
   json.function cable.function
   json.model_year cable.model_year
   json.description cable.description
+  json.discount cable.is_discounted?
+  json.tax cable.tax
+  json.total cable.total
 end
 
 
