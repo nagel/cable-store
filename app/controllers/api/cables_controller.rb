@@ -43,7 +43,12 @@ class Api::CablesController < ApplicationController
       in_stock: params["in_stock"])
     @cable.save
 
-    render "show.json.jbuilder"
+    if @cable.save
+      render "show.json.jbuilder"
+    else
+      render json: {error: @cable.errors}, status: 400 
+    end
+
   end 
 
   def update
@@ -60,8 +65,12 @@ class Api::CablesController < ApplicationController
       in_stock: params["in_stock"] || @cable.in_stock
     )
 
-    #render json: {message: "Data successfully updated!"}
-    render "show.json.jbuilder"
+    if @cable.save
+      #render json: {message: "Data successfully updated!"}
+      render "show.json.jbuilder"
+    else
+      render json: {error: @cable.errors}, status: 400 
+    end 
 
   end 
 

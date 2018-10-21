@@ -4,7 +4,7 @@ class Cable < ApplicationRecord
   validates :price, presence: true
   validates :name, presence: true
   validates :name, uniqueness: true
-  validates :description, length: {in: 50..100}
+  validates :description, length: {in: 10..100}
 
 
   def is_discounted?
