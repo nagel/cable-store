@@ -10,6 +10,10 @@ class Cable < ApplicationRecord
     Vendor.find_by(id: self.vendor_id)
   end 
 
+  def images
+    Image.where(cable_id: self.id)
+  end 
+
   def is_discounted?
     if self.price < 10
       "Discounted!"
