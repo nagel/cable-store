@@ -9,3 +9,4 @@
   json.discount cable.is_discounted?
   json.tax cable.tax
   json.total cable.total
+  json.vendor cable.vendor_id
