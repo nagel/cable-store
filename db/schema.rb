@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_23_013744) do
+ActiveRecord::Schema.define(version: 2018_10_23_020423) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,13 @@ ActiveRecord::Schema.define(version: 2018_10_23_013744) do
     t.datetime "updated_at", null: false
     t.boolean "in_stock"
     t.integer "vendor_id"
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.text "url"
+    t.integer "cable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "vendors", force: :cascade do |t|
