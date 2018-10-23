@@ -61,7 +61,6 @@ class Api::CablesController < ApplicationController
       length: params["length"] || @cable.length,
       function: params["function"] || @cable.function,
       model_year: params["model_year"] || @cable.model_year,
-      image_url: params["image_url"] || @cable.image_url,
       description: params["description"] || @cable.description,
       in_stock: params["in_stock"] || @cable.in_stock,
       vendor_id: params["vendor"] || @cable.vendor_id

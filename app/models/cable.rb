@@ -6,6 +6,9 @@ class Cable < ApplicationRecord
   validates :name, uniqueness: true
   validates :description, length: {in: 10..100}
 
+  def vendor
+    Vendor.find_by(id: self.vendor_id)
+  end 
 
   def is_discounted?
     if self.price < 10
