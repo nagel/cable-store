@@ -20,7 +20,11 @@ class Api::CablesController < ApplicationController
       @cables = @cables.order(:id)
     end
     
-    render "index.json.jbuilder"
+    if current_user
+      render "index.json.jbuilder"
+    else
+      render json: {message: "PLEASE LOGIN!"}
+    end 
 
   end 
 

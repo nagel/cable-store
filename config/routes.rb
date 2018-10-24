@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  
+
   namespace :api do
     #cables controller methods
     ##################################################################
@@ -14,6 +14,11 @@ Rails.application.routes.draw do
     #users controller methods
     ##################################################################
     post "/users" => "users#create"
+    ##################################################################
+
+    #sessions controller methods
+    ##################################################################
+    post "/sessions" => "sessions#create"
     ##################################################################
 
   end 
