@@ -6,7 +6,7 @@ class Cable < ApplicationRecord
   validates :name, uniqueness: true
   validates :description, length: {in: 10..100}
 
-  belongs_to :vendor
+  belongs_to :vendor # automatically creates validation that you must include vendor_id when creating cable model instance
   # def vendor
   #   Vendor.find_by(id: self.vendor_id)
   # end 

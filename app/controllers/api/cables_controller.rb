@@ -45,6 +45,9 @@ class Api::CablesController < ApplicationController
     @cable.save
 
     if @cable.save
+      Image.create(
+        url: params["url"],
+        cable_id: @cable.id)
       render "show.json.jbuilder"
     else
       render json: {error: @cable.errors}, status: 400 
@@ -67,6 +70,9 @@ class Api::CablesController < ApplicationController
     )
 
     if @cable.save
+      Image.create(
+        url: params["url"] || @image.url,
+        cable_id: @cable.id || @image.cable_id)
       #render json: {message: "Data successfully updated!"}
       render "show.json.jbuilder"
     else
