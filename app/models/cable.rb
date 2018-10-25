@@ -16,6 +16,8 @@ class Cable < ApplicationRecord
   #   Image.where(cable_id: self.id)
   # end 
 
+  has_many :orders
+
   def is_discounted?
     if self.price < 10
       "Discounted!"
