@@ -18,6 +18,8 @@ class Cable < ApplicationRecord
 
   has_many :orders
 
+  has_many :category_products
+
   def is_discounted?
     if self.price < 10
       "Discounted!"

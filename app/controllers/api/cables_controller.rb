@@ -1,5 +1,7 @@
 class Api::CablesController < ApplicationController
 
+  before_action :authenticate_admin, except: [:index, :show]
+
   def index
     #@cables is an instance of the Cable class and contains all the data instances (in an array) from the Cable model
     @cables = Cable.all

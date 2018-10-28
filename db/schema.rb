@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_25_004610) do
+ActiveRecord::Schema.define(version: 2018_10_28_145317) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,19 @@ ActiveRecord::Schema.define(version: 2018_10_25_004610) do
     t.datetime "updated_at", null: false
     t.boolean "in_stock"
     t.integer "vendor_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+  end
+
+  create_table "category_products", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "cable_id"
+    t.integer "category_id"
   end
 
   create_table "images", force: :cascade do |t|
@@ -52,6 +65,7 @@ ActiveRecord::Schema.define(version: 2018_10_25_004610) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin", default: false
   end
 
   create_table "vendors", force: :cascade do |t|
