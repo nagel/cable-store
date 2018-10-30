@@ -1,6 +1,6 @@
 class CategoryProduct < ApplicationRecord
 
-  belongs_to :cables
-  belongs_to :categories
+  belongs_to :cable
+  belongs_to :category
 
 end

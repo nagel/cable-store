@@ -73,21 +73,33 @@
 # })
 # category.save
 
-category_product = CategoryProduct.new({
-  cable_id: 1,
-  category_id: 1
-})
-category_product.save
+# category_product = CategoryProduct.new({
+#   cable_id: 1,
+#   category_id: 1
+# })
+# category_product.save
 
-category_product = CategoryProduct.new({
+# category_product = CategoryProduct.new({
+#   cable_id: 2,
+#   category_id: 1
+# })
+# category_product.save
+
+# category_product = CategoryProduct.new({
+#   cable_id: 3,
+#   category_id: 1
+# })
+# category_product.save
+
+
+carted_product = CartedProduct.new({
+  user_id: 1,
   cable_id: 2,
-  category_id: 1
+  quantity: 2,
+  status: "Ordered",
+  order_id: 3
 })
-category_product.save
 
-category_product = CategoryProduct.new({
-  cable_id: 3,
-  category_id: 1
-})
-category_product.save
+carted_product.save
+
 

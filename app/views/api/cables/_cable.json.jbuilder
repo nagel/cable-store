@@ -11,3 +11,4 @@
   json.tax cable.tax
   json.total cable.total
   json.vendor_info cable.vendor #calls vendor method from cable model class and provides all vendor information
+  json.category_info cable.categories

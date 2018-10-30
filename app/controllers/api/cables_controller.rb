@@ -6,6 +6,11 @@ class Api::CablesController < ApplicationController
     #@cables is an instance of the Cable class and contains all the data instances (in an array) from the Cable model
     @cables = Cable.all
 
+    if params[:category]
+      category = Category.find_by(name: params[:category])
+      @cables = category.cables
+    end
+
     #allows user to search by array
     @user_input = params["name"]
 

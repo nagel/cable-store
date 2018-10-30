@@ -21,8 +21,16 @@ Rails.application.routes.draw do
     post "/sessions" => "sessions#create"
     ##################################################################
 
+    #orders controller methods
+    ##################################################################
     get "/orders" => "orders#index"
     post "/orders" => "orders#create"
+    ##################################################################
+
+    #carted_products controller methods
+    ##################################################################
+    post "/cart" => "carted_product#create"
+    ##################################################################
 
   end 
   
