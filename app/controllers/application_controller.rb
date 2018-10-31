@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
           true,
           { algorithm: 'HS256' }
         )
-        User.find_by(id: decoded_token[0]["user_id"])
+        User.find_by(id: decoded_token[0]["user_id"]) # Allows you to call active record methods on logged in user
       rescue JWT::ExpiredSignature
         nil
       end

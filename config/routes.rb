@@ -29,7 +29,8 @@ Rails.application.routes.draw do
 
     #carted_products controller methods
     ##################################################################
-    post "/cart" => "carted_product#create"
+    get "/cart" => "carted_products#index"
+    post "/cart" => "carted_products#create"
     ##################################################################
 
   end 

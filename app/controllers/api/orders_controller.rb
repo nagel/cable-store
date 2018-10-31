@@ -1,4 +1,5 @@
 class Api::OrdersController < ApplicationController
+  
   before_action :authenticate_user
 
   def index
@@ -9,26 +10,35 @@ class Api::OrdersController < ApplicationController
 
   def create
 
-    #Retrieves specific cable for cable model 
-    cable_id = params["cable_id"]
-    cable = Cable.find_by(id: cable_id)
+    user_id = current_user.id
 
-    quantity = params["quantity"].to_i
+    user_order = CartedProduct.where(user_id: user_id, status: "Carted")
+
+    subtotal = 0
+    tax = 0
+    total = 0
+
+    user_order.each do |user_order|
+      subtotal = subtotal + user_order.cable.price * user_order.quantity
+      tax = tax + user_order.cable.tax * user_order.quantity
+      total = total + user_order.cable.tax * user_order.quantity
+      user_order.status = "Purchased"
+      user_order.save
+    end 
 
     @order = Order.new(
-      user_id: current_user.id, 
-      cable_id: cable_id,
-      quantity: quantity,
-      subtotal: cable.price * quantity, 
-      tax: quantity * cable.tax,
-      total: cable.total * quantity
+      user_id: user_id,
+      subtotal: subtotal,
+      tax: tax,
+      total: total
     )
-
     @order.save
 
-
-    render json: {message: "Order created successfully!", subtotal: @order.subtotal, tax: @order.tax, total: @order.total}
-
+    if current_user
+      render json: {message: "Order created successfully!", user: @order.user_id, subtotal: @order.subtotal, tax: @order.tax, total: @order.total}
+    else
+      render json: {message: "Please login!"}
+    end
   end 
 
 end
