@@ -1,0 +1,11 @@
+<% @cables.each do |cable| %>
+  <h1><%= cable.name %></h1>
+  <h5>Price: <%= cable.price %></h5>
+  <h5>Length: <%= cable.length %></h5>
+  <h5>Function: <%= cable.function %></h5>
+  <h5>Model Year: <%= cable.model_year %></h5>
+  <h5>Description: <%= cable.description %></h5>
+  <h5>In Stock? <%= cable.in_stock %></h5>
+  <h5>Vendor Name: <%= cable.vendor.name %></h5>
+  <a href="/products/<%= cable.id %>">More info about <%=cable.name%></a>
+<% end %>

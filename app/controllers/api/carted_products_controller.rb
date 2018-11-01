@@ -25,4 +25,24 @@ class Api::CartedProductsController < ApplicationController
 
   end 
 
+  def delete
+
+    user_id = current_user.id
+
+    @cart = CartedProduct.where(user_id: user_id, status: "Carted")
+
+    #pp @cart
+
+    @cart = CartedProduct.update({
+      status: "Removed"
+    })
+
+    # if 
+    #   render json: {message: "Carted cables have been removed."}
+    # else
+    #   render json: {message: "Failed."}
+    # end
+
+  end 
+
 end
