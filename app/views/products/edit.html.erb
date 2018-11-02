@@ -1,4 +1,5 @@
-<form action="/products" method="patch">
+<form action="/products/<%= @cable.id %>" method="post">
+  <input type="hidden" name="_method" value="patch"> <!--Needed since browsers do not support the patch verb--> 
   <h1>Edit Cable</h1>
   <div>
     Name:<input type="text" name="name" value="<%= @cable.name %>"><br>

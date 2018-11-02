@@ -46,5 +46,29 @@ class ProductsController < ApplicationController
 
   end
 
+  def update
+
+    @cable = Cable.find_by(id: params[:id])
+
+    @cable.update({ #Falsey logic not needed since the edit html.erb calls the current value into the text fields
+      name: params["name"],
+      price: params["price"],
+      length: params["length"],
+      function: params["function"],
+      model_year: params["model_year"],
+      description: params["description"],
+      in_stock: params["in_stock"],
+      vendor_id: params["vendor"]
+    })
+
+    render "show.html.erb"
+
+  end 
+
+  def destroy
+    @cable = Cable.find_by(id: params[:id])
+    @cable.destroy
+    redirect_to "/products"
+  end 
 
 end
