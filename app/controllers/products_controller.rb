@@ -30,12 +30,21 @@ class ProductsController < ApplicationController
       vendor_id: params["vendor"]
       )
     
+    #SAD route
     if @cable.save
-      redirect_to "/products"
+      redirect_to "/products/#{@cable.id}"
     else
       render json: {message: "poop"}
     end
     
   end 
+
+  def edit
+
+    @cable = Cable.find_by(id: params[:id]) #When on the show page, will pull id from the URL
+    render "edit.html.erb"
+
+  end
+
 
 end
