@@ -10,9 +10,13 @@
 
     <link rel="stylesheet" href="styles.css">
 
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="index.js" defer></script>
+
     <title>Kevin's Cables</title>
   </head>
   <body>
+    <!--Nav bar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark"">
       <a class="navbar-brand" href="#">
         <img src="https://i.pinimg.com/originals/0a/f2/ed/0af2ed0d2552cf659421d6cbd9e3bff2.png" margin="0" padding="0" width="30" height="100%" alt="logo">
@@ -34,48 +38,35 @@
                                                                </li>
      </div>
     </nav>
-                                                                      
-  <div class="jumbotron jumbotron-fluid pt-4 pb-1" >
+           
+    <!--Jumbotron-->                                                        
+    <div class="jumbotron jumbotron-fluid pt-4 pb-1" >
     <div class="container">
       <h1 class="display-4 pb-0 mb-0">Expensive Cables</h1>
       <p class="lead">Consumer's #1 choice for cables they could've bought somewhere else</p>
     </div>
-  </div>
+    </div>
 
-<div class="container">
+<div class="container cables-display">
   <div class="row">
-    <div class="col-md-4">
-      <div class="card">
-        <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/71pFDaZU8lL._SX425_.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">HDMI</h5>
-          <p class="card-text"><strong>Price: </strong>$100</p>
-          <a href="#" class="btn btn-primary">Buy Now</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="card">
-        <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/71pFDaZU8lL._SX425_.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">HDMI</h5>
-          <p class="card-text"><strong>Price: </strong>$100</p>
-          <a href="#" class="btn btn-primary">Buy Now</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="card">
-        <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/71pFDaZU8lL._SX425_.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">HDMI</h5>
-          <p class="card-text"><strong>Price: </strong>$100</p>
-          <a href="#" class="btn btn-primary">Buy Now</a>
-        </div>
-      </div>
-    </div>
-
+    <!--Where JS will paste the cards-->
   </div>
 </div>
+
+</html>
+
+<template id="cable-template">
+    <div class="col-md-4 my-1">
+      <div class="card">
+        <img class="card-img-top" height="50%" width="50%">
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-function"></p>
+          <p class="card-description"></p>
+          <p class="card-price"></p>
+          <p class="card-model-year"></p>
+          <a href="#" class="btn btn-primary">Buy Now</a>
+        </div>
+      </div>
+    </div>
+</template>

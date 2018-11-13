@@ -1,6 +1,6 @@
 class Image < ApplicationRecord
 
-  belongs_to :cables
+  belongs_to :cable
   # def cable
   #   Cable.find_by(id: self.cable_id)
   # end 
